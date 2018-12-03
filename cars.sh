@@ -20,14 +20,14 @@ case $userInput in
 	read make
 	echo What is the model?
 	read model
-	collectedInformation = "$year:$make:$model"
-	$collectedInformation >> My_old_cars   
+	echo $year:$make:$model >> My_old_cars   
 	;;
 "L")
-
+	sort My_old_cars | tr ':' ' '
 	;;
 "Q") 
-	exit Goodbye!
+	echo Goodbye!
+	break;
 	;;
 esac
 condition="1"
